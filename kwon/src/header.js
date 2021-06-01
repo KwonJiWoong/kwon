@@ -2,6 +2,7 @@ import { Component } from 'react';
 import './App.css';
 
 class Header extends Component {
+  /* state */
   constructor(props){
     super(props);
     this.state = {
