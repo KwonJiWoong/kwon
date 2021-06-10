@@ -13,6 +13,7 @@ class Header extends Component {
     }
   }
   render(){
+    const _thisname = this.state.name;
     function nameAdd(user){
       return user.firstName + user.lastName;
     }
@@ -27,7 +28,7 @@ class Header extends Component {
           Kwon
         </h1>
         <h2 className="title">
-          {nameAdd(this.state.name)}의 포트폴리오 입니다.
+          {nameAdd(_thisname)}의 포트폴리오 입니다.
         </h2>
         <ul id="gnb" className="gnb">
           {/* 나중에 각 메뉴 별 작동 만들기 */}
