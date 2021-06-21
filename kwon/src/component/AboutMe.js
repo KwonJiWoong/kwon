@@ -5,41 +5,19 @@ class AboutMe extends Component {
         const _aboutme = this.props.about;
         let _list_result;
         const _list = _aboutme.map((_,i) => {
-            console.log(_);
-            <li>{_[i].title}</li>
-            // const _detail = _aboutme.detail[i].map((_detail) =>{
-            //     return <li>_detail</li>;
-            // })
-        //    return <li><a href="#"><h3>{_.title}</h3><ul className="about-def">{}</ul></a></li>;
+            const _detail = _.detail.map((_detail,j) =>{
+                return <li key={j}>{_detail}</li>;
+            })
+           return _list_result = <li><a href="#"><h4 key={i}>{_.title}</h4><ul className="about-def">{_detail}</ul></a></li>;
         });
-        console.log(_list)
         
         return(
-            <ul className="about-me">
-                {_list}
-                {/* default 처리  */}
-                {/* <li>
-                    <a href="#">
-                    <h3>{ _aboutme.about[0].title }</h3>
-                    <ul className="about-def">
-                        <li>{ _aboutme.about[0].detail[0] }</li>
-                        <li>{ _aboutme.about[0].detail[1] }</li>
-                        <li>{ _aboutme.about[0].detail[2] }</li>
-                    </ul>
-                    </a>
-                </li> */}
-                {/* 반복 처리 해주기 */}
-                {/* <li>
-                    <a href="#">
-                    <h3>{ _aboutme.about[1].title }</h3>
-                    <ul className="about-def">
-                        <li>{ _aboutme.about[1].detail[0] }</li>
-                        <li>{ _aboutme.about[1].detail[1] }</li>
-                        <li>{ _aboutme.about[1].detail[2] }</li>
-                    </ul>
-                    </a>
-                </li> */}
-            </ul>
+            <div className="about-me">
+                <h3>제 자신을 소개합니다!</h3>
+                <ul>
+                    {_list_result}
+                </ul>
+            </div>
         )
     }
 }
