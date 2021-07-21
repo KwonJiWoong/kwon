@@ -3,12 +3,12 @@ import { Component } from "react";
 class AboutMe extends Component {
     render(){
         const _aboutme = this.props.about;
-        let _list_result;
+        let _list_result = new Array();
         const _list = _aboutme.map((_,i) => {
             const _detail = _.detail.map((_detail,j) =>{
                 return <li key={j}>{_detail}</li>;
             })
-           return _list_result = <li><a href="#"><h4 key={i}>{_.title}</h4><ul className="about-def">{_detail}</ul></a></li>;
+           return _list_result[i] = <li><h4 key={i}>{_.title}</h4><ul className="about-def">{_detail}</ul></li>;
         });
         
         return(
